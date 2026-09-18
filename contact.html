@@ -1,66 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Sweet Crumbs Bakery</title>
+
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <h1>Sweet Crumbs Bakery</h1>
+    <!-- Header and navigation -->
+    <header>
+        <div class="logo-area">
+            <img src="images/Logo.jpeg" alt="Sweet Crumbs Bakery Logo">
+            <h1>Sweet Crumbs Bakery</h1>
+        </div>
 
-    <p>Freshly baked every day!</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="order.html">Order</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
 
-    <hr>
+    <!-- Main content -->
+    <main>
 
-    <a href="index.html">Home</a> |
-    <a href="about.html">About Us</a> |
-    <a href="products.html">Products</a> |
-    <a href="order.html">Order</a> |
-    <a href="contact.html">Contact Us</a>
+        <!-- Page heading -->
+        <section class="page-heading">
+            <h2>Contact Us</h2>
+            <p>We would love to hear from you.</p>
+        </section>
 
-    <hr>
+        <!-- Contact section -->
+        <section class="contact-section">
 
-    <h2>Contact Us</h2>
+            <!-- Contact details -->
+            <div class="contact-details">
 
-    <p>We would love to hear from you.</p>
+                <h2>Get in Touch</h2>
 
-    <h3>Our Contact Details</h3>
+                <p><strong>Phone:</strong> 012 345 6789</p>
 
-    <p>Phone: 012 345 6789</p>
+                <p><strong>Email:</strong> sweetcrumbsbakery@gmail.com</p>
 
-    <p>Email: sweetcrumbsbakery@gmail.com</p>
+                <p><strong>Address:</strong> Polokwane, Limpopo</p>
 
-    <p>Address: Polokwane, Limpopo</p>
+                <p><strong>Opening Hours:</strong><br>
+                    Monday - Friday: 08:00 - 16:00<br>
+                    Saturday: 08:00 - 13:00
+                </p>
 
-    <h3>Send Us an Enquiry</h3>
+            </div>
 
-    <form>
+            <!-- Enquiry form -->
+            <div class="contact-form">
 
-        <label>Full Name:</label>
-        <input type="text">
+                <h2>Send Us a Message</h2>
 
-        <br><br>
+                <form>
 
-        <label>Email:</label>
-        <input type="email">
+                    <label for="contact-name">Your Name:</label>
+                    <input type="text" id="contact-name" name="contact-name" required>
 
-        <br><br>
+                    <label for="contact-email">Your Email:</label>
+                    <input type="email" id="contact-email" name="contact-email" required>
 
-        <label>Message:</label>
-        <br>
+                    <label for="contact-message">Your Message:</label>
+                    <textarea id="contact-message" name="contact-message" rows="6"
+                        placeholder="Write your message here..." required></textarea>
 
-        <textarea rows="5" cols="30"></textarea>
+                    <input type="submit" value="Send Message" class="button">
 
-        <br><br>
+                </form>
 
-        <input type="submit" value="Send Message">
+            </div>
 
-    </form>
+        </section>
 
-    <hr>
+        <!-- Social media section -->
+        <section class="social-section">
 
-    <p>&copy; 2026 Sweet Crumbs Bakery</p>
+            <h2>Follow Us</h2>
+
+            <p>Stay connected with Sweet Crumbs Bakery.</p>
+
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">WhatsApp</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Freshly baked. Always made with love.</p>
+        <p>&copy; 2026 Sweet Crumbs Bakery</p>
+    </footer>
 
 </body>
 
