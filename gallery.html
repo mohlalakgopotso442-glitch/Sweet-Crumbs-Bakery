@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Sweet Crumbs Bakery</title>
+    <meta name="description" content="Explore the Sweet Crumbs Bakery gallery in Polokwane. View beautiful birthday cakes, customised cakes, fresh bread, pastries, cupcakes and homemade treats.">
+    <meta name="keywords" content="bakery gallery Polokwane, birthday cake pictures, customised cakes, bread gallery, pastries, chocolate cupcakes, bakery treats">
+    <title>Bakery Gallery | Birthday Cakes, Pastries and Treats</title>
 
     <!-- Link to the main stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -38,6 +41,12 @@
             <p>Take a look at some of our freshly baked products.</p>
         </section>
 
+        <section class="product-search" aria-label="Filter gallery">
+            <label for="gallery-search-input">Search the gallery</label>
+            <input type="search" id="gallery-search-input" placeholder="Search for cakes, bread, cupcakes..." autocomplete="off">
+            <p id="gallery-search-status" class="form-status" aria-live="polite">Select any picture to view it larger.</p>
+        </section>
+
         <!-- Cakes -->
         <section class="gallery-category" id="cakes">
             <h2>Cakes</h2>
@@ -45,27 +54,27 @@
             <div class="gallery-grid">
 
                 <div class="gallery-item">
-                    <img src="images/Birthday Cakes.jpeg" alt="Birthday Cake">
+                    <img class="lightbox-image" loading="lazy" src="images/Birthday Cakes.jpeg" alt="Birthday Cake">
                     <h3>Birthday Cakes</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/celebration cakes.jpeg" alt="Celebration Cake">
+                    <img class="lightbox-image" loading="lazy" src="images/celebration cakes.jpeg" alt="Celebration Cake">
                     <h3>Celebration Cakes</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/custom cake.jpeg" alt="Custom Cake">
+                    <img class="lightbox-image" loading="lazy" src="images/custom cake.jpeg" alt="Custom Cake">
                     <h3>Custom Cakes</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/fruit cakes.jpeg" alt="Fruit Cake">
+                    <img class="lightbox-image" loading="lazy" src="images/fruit cakes.jpeg" alt="Fruit Cake">
                     <h3>Fruit Cakes</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/wedding cakes.jpeg" alt="Wedding Cake">
+                    <img class="lightbox-image" loading="lazy" src="images/wedding cakes.jpeg" alt="Wedding Cake">
                     <h3>Wedding Cakes</h3>
                 </div>
 
@@ -80,42 +89,42 @@
             <div class="gallery-grid">
 
                 <div class="gallery-item">
-                    <img src="images/brown bread.jpeg" alt="Brown Bread">
+                    <img class="lightbox-image" loading="lazy" src="images/brown bread.jpeg" alt="Brown Bread">
                     <h3>Brown Bread</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/white bread.jpeg" alt="White Bread">
+                    <img class="lightbox-image" loading="lazy" src="images/white bread.jpeg" alt="White Bread">
                     <h3>White Bread</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/challah bread.jpeg" alt="Challah Bread">
+                    <img class="lightbox-image" loading="lazy" src="images/challah bread.jpeg" alt="Challah Bread">
                     <h3>Challah Bread</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/garlic bread.jpeg" alt="Garlic Bread">
+                    <img class="lightbox-image" loading="lazy" src="images/garlic bread.jpeg" alt="Garlic Bread">
                     <h3>Garlic Bread</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/chocolate pastries.jpeg" alt="Chocolate Pastries">
+                    <img class="lightbox-image" loading="lazy" src="images/chocolate pastries.jpeg" alt="Chocolate Pastries">
                     <h3>Chocolate Pastries</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/danish pastries.jpeg" alt="Danish Pastries">
+                    <img class="lightbox-image" loading="lazy" src="images/danish pastries.jpeg" alt="Danish Pastries">
                     <h3>Danish Pastries</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/savoury pastries.jpeg" alt="Savoury Pastries">
+                    <img class="lightbox-image" loading="lazy" src="images/savoury pastries.jpeg" alt="Savoury Pastries">
                     <h3>Savory Pastries</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/croissants.jpeg" alt="Croissants">
+                    <img class="lightbox-image" loading="lazy" src="images/croissants.jpeg" alt="Croissants">
                     <h3>Croissants</h3>
                 </div>
 
@@ -130,27 +139,27 @@
             <div class="gallery-grid">
 
                 <div class="gallery-item">
-                    <img src="images/Cupcakes.jpeg" alt="Cupcakes">
+                    <img class="lightbox-image" loading="lazy" src="images/Cupcakes.jpeg" alt="Cupcakes">
                     <h3>Cupcakes</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/chocolate cupcake.jpeg" alt="Chocolate Cupcake">
+                    <img class="lightbox-image" loading="lazy" src="images/chocolate cupcake.jpeg" alt="Chocolate Cupcake">
                     <h3>Chocolate Cupcakes</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/cookies and cream cupcake.jpeg" alt="Cookies and Cream Cupcake">
+                    <img class="lightbox-image" loading="lazy" src="images/cookies and cream cupcake.jpeg" alt="Cookies and Cream Cupcake">
                     <h3>Cookies and Cream Cupcakes</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/red velvet cupcake.jpeg" alt="Red Velvet Cupcake">
+                    <img class="lightbox-image" loading="lazy" src="images/red velvet cupcake.jpeg" alt="Red Velvet Cupcake">
                     <h3>Red Velvet Cupcakes</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/vanilla cupcake.jpeg" alt="Vanilla Cupcake">
+                    <img class="lightbox-image" loading="lazy" src="images/vanilla cupcake.jpeg" alt="Vanilla Cupcake">
                     <h3>Vanilla Cupcakes</h3>
                 </div>
 
@@ -165,22 +174,22 @@
             <div class="gallery-grid">
 
                 <div class="gallery-item">
-                    <img src="images/Bakery treats.jpeg" alt="Bakery Treats">
+                    <img class="lightbox-image" loading="lazy" src="images/Bakery treats.jpeg" alt="Bakery Treats">
                     <h3>Bakery Treats</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/brownies.jpeg" alt="Brownies">
+                    <img class="lightbox-image" loading="lazy" src="images/brownies.jpeg" alt="Brownies">
                     <h3>Brownies</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/cake pops.jpeg" alt="Cake Pops">
+                    <img class="lightbox-image" loading="lazy" src="images/cake pops.jpeg" alt="Cake Pops">
                     <h3>Cake Pops</h3>
                 </div>
 
                 <div class="gallery-item">
-                    <img src="images/doughnuts.jpeg" alt="Doughnuts">
+                    <img class="lightbox-image" loading="lazy" src="images/doughnuts.jpeg" alt="Doughnuts">
                     <h3>Doughnuts</h3>
                 </div>
 
@@ -188,6 +197,12 @@
         </section>
 
     </main>
+
+    <div class="lightbox" id="image-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged gallery image" hidden>
+        <button type="button" class="lightbox-close" aria-label="Close enlarged image">&times;</button>
+        <img src="" alt="">
+        <p class="lightbox-caption"></p>
+    </div>
 
     <!-- Footer -->
     <footer>

@@ -4,10 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Sweet Crumbs Bakery</title>
 
-    <!-- Link to the main stylesheet -->
+    <meta name="description" content="Explore Sweet Crumbs Bakery's delicious products in Polokwane, including customised cakes, birthday cakes, fresh bread, pastries, cupcakes and sweet treats.">
+
+    <meta name="keywords" content="bakery products Polokwane, birthday cakes, customised cakes, fresh bread, brown bread, pastries, cupcakes, brownies, doughnuts">
+
+    <title>Bakery Products | Cakes, Bread and Treats | Sweet Crumbs</title>
+
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -38,34 +43,36 @@
             <p>We offer a variety of freshly baked products for different occasions.</p>
         </section>
 
-        <!-- Product categories -->
-        <section class="product-categories">
+        <!-- Search products -->
+        <section class="product-search" aria-label="Search bakery products">
 
-            <div class="product-category">
-                <img src="images/Birthday Cakes.jpeg" alt="Cakes">
-                <h3>Cakes</h3>
-                <p>Birthday, celebration, wedding and custom cakes.</p>
-                <a href="gallery.html#cakes" class="button">View</a>
-            </div>
+            <label for="product-search-input">Search products</label>
 
-            <div class="product-category">
-                <img src="images/Fresh bread and pastries.jpeg" alt="Bread and Pastries">
-                <h3>Bread &amp; Pastries</h3>
-                <p>Fresh bread, croissants, pastries and other baked goods.</p>
-                <a href="gallery.html#bread" class="button">View</a>
-            </div>
+            <input
+                type="search"
+                id="product-search-input"
+                placeholder="Search cakes, bread, cupcakes..."
+                autocomplete="off"
+            >
 
-            <div class="product-category">
-                <img src="images/Cupcakes.jpeg" alt="Cupcakes and Treats">
-                <h3>Cupcakes &amp; Treats</h3>
-                <p>Cupcakes, cookies, brownies and delicious bakery treats.</p>
-                <a href="gallery.html#cupcakes" class="button">View</a>
-            </div>
+            <p id="product-search-status" class="form-status" aria-live="polite">
+                Browse our product categories below.
+            </p>
 
         </section>
 
+        <!-- Product categories loaded using JavaScript -->
+        <section class="product-categories" id="product-list">
+            <!-- JavaScript will load the product categories here -->
+        </section>
+
+        <p id="no-products-message" class="form-status" hidden>
+            No matching product categories were found. Try another search.
+        </p>
+
         <!-- Product price table -->
         <section class="product-table">
+
             <h2>Product Prices</h2>
 
             <table>
@@ -109,16 +116,19 @@
                     </tr>
                 </tbody>
             </table>
+
         </section>
 
         <!-- Order call-to-action -->
         <section class="order-banner">
+
             <div>
                 <h2>Order your favourites today!</h2>
                 <p>If you would like to order any of our products, visit our order page.</p>
             </div>
 
             <a href="order.html" class="button">Order Now</a>
+
         </section>
 
     </main>
@@ -130,5 +140,4 @@
     </footer>
 
 </body>
-
 </html>

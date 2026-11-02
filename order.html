@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order - Sweet Crumbs Bakery</title>
+    <meta name="description" content="Send an order or product enquiry to Sweet Crumbs Bakery using our online order form.">
+    <meta name="keywords" content="bakery orders, cake orders, product enquiries">
+    <title>Order and Enquiries | Sweet Crumbs Bakery</title>
 
     <!-- Link to the main stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -45,7 +48,7 @@
 
                 <h2>Order / Enquiry Form</h2>
 
-                <form>
+                <form id="order-form" class="validated-form" novalidate>
 
                     <label for="name">Full Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -54,10 +57,11 @@
                     <input type="email" id="email" name="email" required>
 
                     <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9+()\s-]{7,20}" placeholder="e.g. 071 234 5678">
 
                     <label for="product">Choose a Product:</label>
-                    <select id="product" name="product">
+                    <select id="product" name="product" required>
+                        <option value="">Please choose a product</option>
                         <option value="birthday-cake">Birthday Cake</option>
                         <option value="cupcakes">Cupcakes</option>
                         <option value="fresh-bread">Fresh Bread</option>
@@ -66,12 +70,13 @@
                     </select>
 
                     <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" min="1">
+                    <input type="number" id="quantity" name="quantity" min="1" max="100" required>
 
                     <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5"
+                    <textarea id="message" name="message" rows="5" minlength="10"
                         placeholder="Tell us what you would like to order..."></textarea>
 
+                    <p class="form-status" id="order-form-status" aria-live="polite"></p>
                     <input type="submit" value="Submit Order" class="button">
 
                 </form>

@@ -1,3 +1,16 @@
+/* Part 3: Staggered product card animations */
+
+.product-category:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.product-category:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.product-category:nth-child(3) {
+    animation-delay: 0.3s;
+}s
 /* =========================================
    SWEET CRUMBS BAKERY
    Main Stylesheet
@@ -70,7 +83,6 @@ header {
     gap: 12px;
 }
 
-/* Smaller bakery logo */
 .logo-area img {
     width: 55px;
     height: 55px;
@@ -510,6 +522,7 @@ input[type="submit"] {
     color: #f8f1e7;
     border: 2px solid #6b3e26;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 input[type="submit"]:hover,
@@ -623,6 +636,7 @@ footer p {
    ========================================= */
 
 /* Tablets */
+
 @media (max-width: 900px) {
 
     header {
@@ -663,6 +677,7 @@ footer p {
 
 
 /* Mobile phones */
+
 @media (max-width: 600px) {
 
     main {
@@ -714,5 +729,255 @@ footer p {
     th,
     td {
         padding: 8px;
+    }
+}
+
+
+/* =========================================
+   PART 3: JAVASCRIPT FUNCTIONALITY
+   SEARCH, LIGHTBOX AND ACCESSIBILITY
+   ========================================= */
+
+/* Hide selected elements */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* Product search */
+
+.product-search {
+    max-width: 720px;
+    margin: 24px auto;
+    padding: 18px;
+    background: #f8e1e8;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.product-search label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.product-search input[type="search"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #6b3e26;
+    border-radius: 5px;
+    font: inherit;
+    background: #fff;
+}
+
+
+/* Form status messages */
+
+.form-status {
+    min-height: 1.4em;
+    margin: 10px 0;
+    font-size: 0.95rem;
+}
+
+.error-message {
+    color: #9b1c1c;
+    font-weight: bold;
+}
+
+
+/* Form accessibility */
+
+.validated-form input:focus,
+.validated-form select:focus,
+.validated-form textarea:focus,
+.product-search input:focus {
+    outline: 3px solid #b56b88;
+    outline-offset: 2px;
+}
+
+
+/* Gallery lightbox images */
+
+.gallery-item img.lightbox-image {
+    cursor: zoom-in;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-item img.lightbox-image:hover,
+.gallery-item img.lightbox-image:focus {
+    transform: scale(1.025);
+    box-shadow: 0 5px 16px rgba(107, 62, 38, 0.22);
+}
+
+
+/* Lightbox */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 24px;
+    background: rgba(35, 22, 16, 0.92);
+}
+
+.lightbox img {
+    max-width: min(90vw, 900px);
+    max-height: 78vh;
+    object-fit: contain;
+    border: 5px solid #f8e1e8;
+    border-radius: 6px;
+}
+
+.lightbox-caption {
+    color: #fff;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    border: 0;
+    background: #e8b7c8;
+    color: #3b2418;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* Card animations */
+
+.product-category,
+.gallery-item,
+.specialty-card {
+    animation: fadeUp 0.45s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* GOOGLE MAPS SECTION */
+
+.map-section {
+    background-color: #f8e1e8;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.map-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* LEAFLET INTERACTIVE MAP */
+
+#bakery-map {
+    width: 100%;
+    height: 350px;
+    border: 3px solid #e8b7c8;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.map-credit {
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* QUICK FIX: CONTACT PAGE HEADER AND LOGO */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px 5%;
+    gap: 15px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+header .logo img {
+    width: 100px;
+    height: 100px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+header .logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    font-size: 16px;
+    text-decoration: none;
+    padding: 8px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header nav ul {
+        justify-content: center;
     }
 }

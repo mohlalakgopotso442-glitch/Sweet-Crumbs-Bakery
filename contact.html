@@ -1,82 +1,216 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Sweet Crumbs Bakery</title>
 
-    <!-- Link to the main stylesheet -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Sweet Crumbs Bakery</title>
+
+    <meta name="description"
+
+        content="Contact Sweet Crumbs Bakery for cake orders, fresh bread, pastries and enquiries in Polokwane, Limpopo.">
+
+    <meta name="keywords"
+
+        content="Sweet Crumbs Bakery, contact bakery, Polokwane bakery, cake orders, bakery enquiries">
+
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <!-- Header and navigation -->
+    <!-- HEADER -->
+
     <header>
-        <div class="logo-area">
-            <img src="images/Logo.jpeg" alt="Sweet Crumbs Bakery Logo">
+
+        <div class="logo">
+
+            <img src="images/Logo.jpeg" alt="Sweet Crumbs Bakery logo">
+
             <h1>Sweet Crumbs Bakery</h1>
+
         </div>
 
+        <!-- NAVIGATION -->
+
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="products.html">Products</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="order.html">Order</a>
-            <a href="contact.html">Contact Us</a>
+
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="about.html">About Us</a></li>
+
+                <li><a href="products.html">Products</a></li>
+
+                <li><a href="gallery.html">Gallery</a></li>
+
+                <li><a href="order.html">Order</a></li>
+
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+
+            </ul>
+
         </nav>
+
     </header>
 
-    <!-- Main content -->
+    <!-- MAIN CONTENT -->
+
     <main>
 
-        <!-- Page heading -->
-        <section class="page-heading">
+        <!-- INTRODUCTION -->
+
+        <section class="page-intro">
+
             <h2>Contact Us</h2>
-            <p>We would love to hear from you.</p>
+
+            <p>
+
+                We would love to hear from you!
+
+                Contact Sweet Crumbs Bakery for orders,
+
+                enquiries or any questions about our products.
+
+            </p>
+
         </section>
 
-        <!-- Contact section -->
+        <!-- CONTACT SECTION -->
+
         <section class="contact-section">
 
-            <!-- Contact details -->
-            <div class="contact-details">
+            <!-- CONTACT INFORMATION -->
 
-                <h2>Get in Touch</h2>
+            <div class="contact-info">
 
-                <p><strong>Phone:</strong> 012 345 6789</p>
+                <h2>Get In Touch</h2>
 
-                <p><strong>Email:</strong> sweetcrumbsbakery@gmail.com</p>
+                <p>
 
-                <p><strong>Address:</strong> Polokwane, Limpopo</p>
+                    Have a question or need help with an order?
 
-                <p><strong>Opening Hours:</strong><br>
-                    Monday - Friday: 08:00 - 16:00<br>
-                    Saturday: 08:00 - 13:00
+                    You can contact us using the details below.
+
+                </p>
+
+                <p>
+
+                    <strong>Bakery:</strong>
+
+                    Sweet Crumbs Bakery
+
+                </p>
+
+                <p>
+
+                    <strong>Address:</strong>
+
+                    2 Tagore Street, Nirvana, Polokwane, 0699
+
+                </p>
+
+                <p>
+
+                    <strong>Location:</strong>
+
+                    Polokwane, Limpopo
+
+                </p>
+
+                <p>
+
+                    <strong>Email:</strong>
+
+                    sweetcrumbsbakery@example.com
+
+                </p>
+
+                <p>
+
+                    <strong>Opening Hours:</strong>
+
+                    Monday – Saturday, 08:00 – 17:00
+
                 </p>
 
             </div>
 
-            <!-- Enquiry form -->
+            <!-- CONTACT FORM -->
+
             <div class="contact-form">
 
                 <h2>Send Us a Message</h2>
 
-                <form>
+                <form id="contact-form">
 
-                    <label for="contact-name">Your Name:</label>
-                    <input type="text" id="contact-name" name="contact-name" required>
+                    <label for="name">Full Name:</label>
 
-                    <label for="contact-email">Your Email:</label>
-                    <input type="email" id="contact-email" name="contact-email" required>
+                    <input
 
-                    <label for="contact-message">Your Message:</label>
-                    <textarea id="contact-message" name="contact-message" rows="6"
-                        placeholder="Write your message here..." required></textarea>
+                        type="text"
 
-                    <input type="submit" value="Send Message" class="button">
+                        id="name"
+
+                        name="name"
+
+                        placeholder="Enter your full name"
+
+                        required>
+
+                    <label for="email">Email Address:</label>
+
+                    <input
+
+                        type="email"
+
+                        id="email"
+
+                        name="email"
+
+                        placeholder="Enter your email address"
+
+                        required>
+
+                    <label for="subject">Subject:</label>
+
+                    <input
+
+                        type="text"
+
+                        id="subject"
+
+                        name="subject"
+
+                        placeholder="Enter your subject"
+
+                        required>
+
+                    <label for="message">Message:</label>
+
+                    <textarea
+
+                        id="message"
+
+                        name="message"
+
+                        rows="5"
+
+                        placeholder="Write your message here..."
+
+                        required></textarea>
+
+                    <button type="submit" class="button">
+
+                        Send Message
+
+                    </button>
 
                 </form>
 
@@ -84,28 +218,87 @@
 
         </section>
 
-        <!-- Social media section -->
-        <section class="social-section">
+        <!-- GOOGLE MAPS LOCATION -->
 
-            <h2>Follow Us</h2>
+        <section class="map-section">
 
-            <p>Stay connected with Sweet Crumbs Bakery.</p>
+            <h2>Find Us</h2>
 
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">WhatsApp</a>
+            <p>
+
+                Visit our sample bakery location in
+
+                Polokwane, Limpopo.
+
+            </p>
+
+            <div class="map-container">
+
+                <iframe
+
+                    src="https://www.google.com/maps?q=Best+Bake+Bakery,+2+Tagore+Street,+Nirvana,+Polokwane&output=embed"
+
+                    width="100%"
+
+                    height="350"
+
+                    style="border:0;"
+
+                    allowfullscreen
+
+                    loading="lazy"
+
+                    referrerpolicy="no-referrer-when-downgrade">
+
+                </iframe>
+
             </div>
+
+            <p>
+
+                <strong>Sample Address:</strong>
+
+                2 Tagore Street, Nirvana, Polokwane, 0699
+
+            </p>
+
+            <a
+
+                href="https://www.google.com/maps/search/?api=1&query=Best+Bake+Bakery+Polokwane"
+
+                target="_blank"
+
+                rel="noopener noreferrer"
+
+                class="button">
+
+                Get Directions
+
+            </a>
 
         </section>
 
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
+
     <footer>
-        <p>Freshly baked. Always made with love.</p>
-        <p>&copy; 2026 Sweet Crumbs Bakery</p>
+
+        <p>
+
+            &copy; 2026 Sweet Crumbs Bakery.
+
+            All Rights Reserved.
+
+        </p>
+
+        <p>Freshly Baked with Love!</p>
+
     </footer>
+
+    <!-- MAIN JAVASCRIPT -->
+
+    <script src="js/script.js" defer></script>
 
 </body>
 
