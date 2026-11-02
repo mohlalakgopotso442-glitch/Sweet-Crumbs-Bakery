@@ -317,101 +317,138 @@ const bakeryEmail = 'sweetcrumbsbakery@gmail.com';
 
 
 /* =========================================
-   7. ORDER FORM
+   7. ORDER FORM - AJAX SUBMISSION
 ========================================= */
 
 const orderForm = document.querySelector('#order-form');
 
 if (orderForm) {
-
-    orderForm.addEventListener('submit', event => {
-
+    orderForm.addEventListener('submit', async event => {
         event.preventDefault();
 
         if (!validForm(orderForm)) return;
 
-        const data = new FormData(orderForm);
-
-        const subject = encodeURIComponent(
-            'Sweet Crumbs Bakery - Order Enquiry'
-        );
-
-        const body = encodeURIComponent(
-
-            `Name: ${data.get('name')}
-Email: ${data.get('email')}
-Phone: ${data.get('phone')}
-Product: ${data.get('product')}
-Quantity: ${data.get('quantity')}
-Message: ${data.get('message') || 'No additional message'}`
-
-        );
-
         const status = orderForm.querySelector('.form-status');
+        const submitButton = orderForm.querySelector('[type="submit"]');
+
+        const data = new FormData(orderForm);
+        const formData = Object.fromEntries(data.entries());
+
+        formData._subject = 'Sweet Crumbs Bakery - Order Enquiry';
 
         if (status) {
-
-            status.textContent =
-                'Your order enquiry is ready. Your email application will open so you can send it.';
-
+            status.textContent = 'Sending your order enquiry...';
         }
 
-        window.location.href =
-            `mailto:${bakeryEmail}?subject=${subject}&body=${body}`;
+        if (submitButton) submitButton.disabled = true;
 
+        try {
+            const response = await fetch(
+                'https://formsubmit.co/ajax/mohlalakgopotso442@gmail.com',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                }
+            );
+
+            const result = await response.json();
+
+            if (!response.ok || result.success !== 'true') {
+                throw new Error('Order submission failed.');
+            }
+
+            if (status) {
+                status.textContent =
+                    'Thank you! Your order enquiry has been submitted successfully.';
+            }
+
+            orderForm.reset();
+
+        } catch (error) {
+            if (status) {
+                status.textContent =
+                    'Sorry, your order could not be sent. Please try again.';
+            }
+
+            console.error('Order form error:', error);
+
+        } finally {
+            if (submitButton) submitButton.disabled = false;
+        }
     });
-
 }
 
 
 /* =========================================
-   8. CONTACT FORM
+   8. CONTACT FORM - AJAX SUBMISSION
 ========================================= */
 
 const contactForm = document.querySelector('#contact-form');
 
 if (contactForm) {
-
-    contactForm.addEventListener('submit', event => {
-
+    contactForm.addEventListener('submit', async event => {
         event.preventDefault();
 
         if (!validForm(contactForm)) return;
 
-        const data = new FormData(contactForm);
-
-        const subject = encodeURIComponent(
-            `Sweet Crumbs Bakery - ${data.get('subject')}`
-        );
-
-        const body = encodeURIComponent(
-
-            `Name: ${data.get('name')}
-Email: ${data.get('email')}
-Subject: ${data.get('subject')}
-
-Message:
-${data.get('message')}`
-
-        );
-
         const status = contactForm.querySelector('.form-status');
+        const submitButton = contactForm.querySelector('[type="submit"]');
+
+        const data = new FormData(contactForm);
+        const formData = Object.fromEntries(data.entries());
+
+        formData._subject =
+            `Sweet Crumbs Bakery - ${formData.subject}`;
 
         if (status) {
-
-            status.textContent =
-                'Your message is ready. Your email application will open so you can send it.';
-
+            status.textContent = 'Sending your message...';
         }
 
-        window.location.href =
-            `mailto:${bakeryEmail}?subject=${subject}&body=${body}`;
+        if (submitButton) submitButton.disabled = true;
 
+        try {
+            const response = await fetch(
+                'https://formsubmit.co/ajax/mohlalakgopotso442@gmail.com',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                }
+            );
+
+            const result = await response.json();
+
+            if (!response.ok || result.success !== 'true') {
+                throw new Error('Message submission failed.');
+            }
+
+            if (status) {
+                status.textContent =
+                    'Thank you! Your message has been sent successfully.';
+            }
+
+            contactForm.reset();
+
+        } catch (error) {
+            if (status) {
+                status.textContent =
+                    'Sorry, your message could not be sent. Please try again.';
+            }
+
+            console.error('Contact form error:', error);
+
+        } finally {
+            if (submitButton) submitButton.disabled = false;
+        }
     });
-
 }
-
-
 /* =========================================
    9. ACCORDION FUNCTIONALITY
 ========================================= */
